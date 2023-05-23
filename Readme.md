@@ -1,15 +1,35 @@
-categoriResolver.js: Il définit un schéma GraphQL avec des types, des requêtes et des mutations pour gérer les catégories.
+Job Management
+GraphQL Endpoint
+You can access the GraphQL endpoint for job management at http://localhost:5000/graphql. This endpoint allows you to perform complex queries and mutations to manage job data. The GraphQL Playground (GraphiQL) is enabled for easy testing and exploration.
 
-categoriSchema.js: Il établit une connexion à une base de données SQLite et crée une table pour stocker les catégories.
+RESTful Endpoints
+The API also exposes RESTful endpoints for basic CRUD operations on jobs. The available endpoints are as follows:
 
-models.js: Il définit une classe "Categori" avec des méthodes pour interagir avec la base de données, telles que l'ajout, la recherche, la mise à jour et la suppression de catégories.
+GET /jobs: Retrieve all jobs.
+GET /job/:id: Retrieve a specific job by its ID.
+POST /job: Create a new job. The job details should be provided in the request body as JSON.
+PUT /job/:id: Update an existing job by its ID. The updated job details should be provided in the request body as JSON.
+DELETE /job/:id: Delete a job by its ID.
+Categori Management
+GraphQL Endpoint
+You can access the GraphQL endpoint for categori management at http://localhost:5001/graphql. This endpoint allows you to perform complex queries and mutations to manage categori data. The GraphQL Playground (GraphiQL) is enabled for easy testing and exploration.
 
-server.js: Il configure un serveur Express qui utilise à la fois GraphQL et des API REST pour gérer les catégories, en se basant sur le schéma GraphQL et la base de données SQLite. Il définit des points de terminaison pour les opérations CRUD sur les catégories.
-***************************************************************************************************************************************
- (jobResolver.js): Ce code définit des résolveurs GraphQL qui interagissent avec une base de données pour récupérer, insérer, mettre à jour et supprimer des emplois. Il utilise des requêtes SQL pour effectuer ces opérations et retourne les résultats ou les erreurs sous forme de promesses.
+RESTful Endpoints
+The API also exposes RESTful endpoints for basic CRUD operations on categoris. The available endpoints are as follows:
 
- (jobSchema.js): Ce code crée un schéma GraphQL qui définit les types, les requêtes et les mutations pour gérer les emplois. Il spécifie les champs et les opérations disponibles, ainsi que le schéma de réponse pour la suppression d'un emploi.
+GET /categoris: Retrieve all categoris.
+GET /categori/:id: Retrieve a specific categori by its ID.
+POST /categori: Create a new categori. The categori details should be provided in the request body as JSON.
+PUT /categori/:id: Update an existing categori by its ID. The updated categori details should be provided in the request body as JSON.
+DELETE /categori/:id: Delete a categori by its ID.
+Note: For the POST and PUT requests, the job and categori details should include job and categorie properties respectively.
 
-models.js (SQLite Database Setup): Ce code configure une connexion à une base de données SQLite, crée une table "jobs" si elle n'existe pas déjà, et définit une classe Job pour interagir avec la base de données. La classe offre des méthodes pour enregistrer, rechercher, mettre à jour et supprimer des emplois dans la base de données.
+API Gateway
+The API Gateway acts as a proxy server to route requests to the appropriate microservices based on specific routes. It uses http-proxy-middleware to handle the routing.
 
-server.js(Express Server Setup): Ce code crée un serveur Express qui gère les requêtes GraphQL et les requêtes API REST liées aux emplois. Il configure les routes et les middlewares nécessaires pour traiter les requêtes, et utilise les fonctions de résolveur et les requêtes de base de données correspondantes pour fournir les résultats attendus.
+Configuration
+The API Gateway is configured using the routes object in the index.js file. Each key-value pair in the routes object represents a route and
+
+
+
+
