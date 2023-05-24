@@ -3,8 +3,8 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 // define routes and their ports 
 const routes = {
-    '/s1': 'http://localhost:5000',//microservice pour manga
-    '/s2': 'http://localhost:5001', //microservice pour category
+    '/categorie': 'http://localhost:5000',
+    '/job': 'http://localhost:5001', 
 
 };
 
@@ -24,5 +24,5 @@ app.listen(PORT, () => {
 
 // Test the proxy
 // 1. Start all the servers
-// 2. Open a browser and navigate to http://localhost:5001/s2
-// 3. Open a browser and navigate to http://localhost:5000/s1
+// 2. Open a browser and navigate to http://localhost:5001/categorie
+// 3. Open a browser and navigate to http://localhost:5000/job
