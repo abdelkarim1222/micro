@@ -22,7 +22,3 @@ app.listen(PORT, () => {
 }
 );
 
-// Test the proxy
-// 1. Start all the servers
-// 2. Open a browser and navigate to http://localhost:5001/categorie
-// 3. Open a browser and navigate to http://localhost:5000/job

@@ -1,4 +1,3 @@
-// jobResolver.js
 const db = require('./models');
 // Implémentation des résolveurs GraphQL
 const jobResolver = {
